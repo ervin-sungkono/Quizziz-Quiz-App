@@ -1,20 +1,43 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+import flowbite from "flowbite/plugin";
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+const config : Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    screens: {
+      'xs': '440px',
+      ...defaultTheme.screens,
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6.25rem',
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        // Tambah warna disini dengan format 'nama-warna': 'kode warna (hex atau rgb)'
+        'darker-blue': '#041221',
+        'dark-blue': '#262E3E',
+        'light-blue': '#778DA9',
+        'sky-blue': '#EAF5FF',
+        'primary-orange': '#DC851F'
+      },
+      zIndex:{
+        'fixed': '9999'
       },
     },
   },
-  plugins: [],
-};
+  plugins: [flowbite],
+}
+
 export default config;
