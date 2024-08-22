@@ -30,13 +30,15 @@ const config : Config = {
         'dark-blue': '#262E3E',
         'light-blue': '#778DA9',
         'sky-blue': '#EAF5FF',
-        'primary-orange': '#DC851F'
+        'primary-orange': '#DC851F',
+        'light-orange': '#EE9C3B'
       },
       zIndex:{
         'fixed': '9999'
       },
     },
   },
+  darkMode: 'class',
   plugins: [flowbite],
 }
 
