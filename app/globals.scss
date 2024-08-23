@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$darker-blue: #041221;
+$dark-blue: #262E3E;
+$light-blue: #778DA9;
+$sky-blue: #EAF5FF;
+$primary-orange: #DC851F;
+$light-orange: #EE9C3B;
+
+/* width */
+.custom-scrollbar::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #bbbbbb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #7e7e7e;
+    border-radius: 10px;
+}
+
+.container{
+    max-width: 1440px !important; 
+}
+
+.hamburger-btn{
+    padding: 0.5rem;
+    display: none;
+    gap: 8px;
+    > div{
+        width: 32px;
+        height: 3px;
+        background-color: $dark-blue;
+        border-radius: 4px;
+        transition: 0.5s ease-in-out;
+    }
+    &.active{
+        > div:nth-child(1){
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform-origin: left;
+        }
+        > div:nth-child(2) {
+            transform: translateX(-20px);
+            -webkit-transform: translateX(-20px);
+            -moz-transform: translateX(-20px);
+            -o-transform: translateX(-20px);
+            opacity: 0;
+        }
+        > div:nth-child(3) {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform-origin: left;
+        }
+    }
+}
+
+.dark .hamburger-btn > div{
+    background-color: $sky-blue;
+}
+
+@media only screen and (max-width: 1024px){
+    .hamburger-btn{
+        display: flex;
+        flex-direction: column;
+        z-index: 9999;
+    }
+
+    .nav-menu{
+        min-width: 200px;
+        height: 100vh;
+        z-index: 9999;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        flex-direction: column;
+        padding-top: 5rem;
+        padding-inline: 1rem;
+        transition: 0.5s transform ease-in-out;
+
+        &.active{
+            transform: translateX(0);
+        }
+    }
+}
