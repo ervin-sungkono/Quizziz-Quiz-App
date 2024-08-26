@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import FirebaseAuthProvider from "@/components/providers/FirebaseAuthProvider";
+import ClientProviders from "@/components/providers/ClientProviders";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,15 +18,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider 
-          attribute="class" 
-          enableSystem={false}
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClientProviders>
+      <html lang="en">
+        <body className={inter.className}>
+          <FirebaseAuthProvider>
+            <ThemeProvider 
+              attribute="class" 
+              enableSystem={false}
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </FirebaseAuthProvider>
+        </body>
+      </html>
+    </ClientProviders>  
   );
 }
