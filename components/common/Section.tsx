@@ -19,7 +19,7 @@ const colorOptions : ColorOptions = {
 export default function Section({ size = 'normal', color = 'primary', children, ...props } : SectionProps){
     if(size === "normal") return(
         <div className={`${colorOptions[color]}`}>
-            <section {...props} className={`container md:py-12 py-6 ${props.className}`}>
+            <section {...props} className={`container md:py-12 py-8 ${props.className}`}>
                 {children}
             </section>
         </div>
