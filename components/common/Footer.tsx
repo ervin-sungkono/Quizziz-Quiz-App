@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ReactNode } from "react"
 import { 
     RiGithubFill as GithubIcon, 
@@ -27,7 +26,7 @@ export default function Footer(){
     }
 
     return (
-        <footer className="bg-sky-blue dark:bg-darker-blue">
+        <footer className="bg-blue-200 dark:bg-darker-blue">
             <div className="container flex flex-col gap-8 items-center py-8">
                 <div className="w-full flex justify-between">
                     <div className="flex flex-col gap-4">

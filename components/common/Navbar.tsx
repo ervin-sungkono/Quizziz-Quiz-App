@@ -66,15 +66,15 @@ export default function Navbar(){
 
     const renderToggleThemeButton = (type = "default") => {
         return mounted && (
-        <div className={`w-16 h-8 py-1 px-2 bg-blue-200 dark:bg-gray-700 rounded-full cursor-pointer ${type === 'mobile' ? "mt-4 block lg:hidden" : "hidden lg:block"} `} onClick={() => toggleTheme()}>
-            <div className="w-6 h-6 flex justify-center items-center bg-primary-orange dark:bg-light-blue rounded-full transition-transform ease-in-out duration-500 dark:translate-x-full">
+        <div className={`w-16 h-8 py-1 px-2 bg-blue-100 dark:bg-gray-700 rounded-full cursor-pointer ${type === 'mobile' ? "mt-4 block lg:hidden" : "hidden lg:block"} `} onClick={() => toggleTheme()}>
+            <div className="w-6 h-6 flex justify-center items-center bg-primary-orange dark:bg-light-blue rounded-full transition-transform ease-in-out duration-500 translate-x-0 dark:translate-x-full">
                 {theme === 'light' ? <SunIcon className="text-white"/> : <MoonIcon className="text-darker-blue"/>}
             </div>
         </div>)
     }
 
     return(
-        <nav className="fixed w-full top-0 left-0 z-fixed bg-sky-blue dark:bg-darker-blue">
+        <nav className="fixed w-full top-0 left-0 z-fixed bg-blue-200 dark:bg-darker-blue">
             <div className="container flex items-center h-20">
                 <div className="flex gap-8 items-center">
                     <Link href={"/"}>
@@ -82,7 +82,7 @@ export default function Navbar(){
                     </Link>
                     {renderToggleThemeButton()}
                 </div> 
-                <div className={`nav-menu bg-sky-blue dark:bg-darker-blue flex ml-auto items-center h-full ${hamburgerState ? 'active' : ''}`}>
+                <div className={`nav-menu bg-blue-200 dark:bg-darker-blue flex ml-auto items-center h-full ${hamburgerState ? 'active' : ''}`}>
                     {links.map(({label, url}, index)=> (
                         <Link 
                             key={`${label}-${index}`} 

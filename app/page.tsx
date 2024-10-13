@@ -1,9 +1,12 @@
+import AboutSection from "@/components/home/AboutSection"
+import HeroSection from "@/components/home/HeroSection"
 import DefaultLayout from "@/components/layout/DefaultLayout"
 
 export default function HomePage() {
   return (
     <DefaultLayout>
-        <p className="dark:text-white h-screen">testing home content</p>
+        <HeroSection/>
+        <AboutSection/>
     </DefaultLayout>
   )
 }
